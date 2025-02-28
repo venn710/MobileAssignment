@@ -25,6 +25,8 @@ class ApiService : NSObject {
                 let empData = try! jsonDecoder.decode([DeviceData].self, from: data)
                 if (empData.isEmpty) {
                     completion([])
+                } else {
+                    completion(empData)
                 }
             }
         }.resume()
